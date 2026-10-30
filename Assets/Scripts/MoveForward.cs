@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class MoveForward : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //Declaring a new speed variable
+    public float speed = 40.0f;
 
-    // Update is called once per frame
+    //Setting the projectiles speed vairable based on the time in seconds
+    //Also adjusting in Insoector
     void Update()
     {
-        
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 }

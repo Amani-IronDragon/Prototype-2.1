@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     //New range based on x-value, preventing the player from moving past this value
     public float xRange = 10;
 
+    //Creating a new food prefab variable
+    public GameObject projectilePrefab;
+
     //Keeps the player within bounds
     void Update()
     {
@@ -27,6 +30,12 @@ public class PlayerController : MonoBehaviour
         if(transform.position.x < xRange)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        }
+
+        //Creating an if-statement for a spacebar check
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
     }
 }
